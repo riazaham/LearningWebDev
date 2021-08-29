@@ -2,7 +2,6 @@ import express from "express";
 import { getDate, getDay } from "./date.js";
 import mongoose from "mongoose";
 import _ from "lodash";
-import dotenv from "dotenv";
 
 //const __dirname = path.resolve();
 const app = express();
@@ -10,7 +9,6 @@ app.set("view-engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
-dotenv.con;
 
 //Connect to db
 const url = process.env.MONGODB_URI;
