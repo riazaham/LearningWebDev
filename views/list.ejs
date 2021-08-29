@@ -1,0 +1,33 @@
+<%- include("header.ejs") -%>
+
+<div class="box" id="heading">
+	<h1><%= listTitle %></h1>
+</div>
+
+<div class="box">
+	<form class="item" action="/" method="post">
+		<input
+			type="text"
+			placeholder="What's on your todo!"
+			name="newTodo"
+			autocomplete="off"
+		/>
+		<button type="submit" name="listType" value="<%=listTitle%>">+</button>
+	</form>
+	<% todos.forEach((todo) => { %>
+	<form action="/delete" method="post">
+		<div class="item">
+			<input
+				type="checkbox"
+				name="todoId"
+				value="<%=todo._id%>"
+				onchange="this.form.submit()"
+			/>
+			<p><%= todo.name %></p>
+		</div>
+		<input type="hidden" name="listType" value="<%=listTitle%>" />
+	</form>
+	<% }) %>
+</div>
+
+<%- include("footer.ejs") -%>
