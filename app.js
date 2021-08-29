@@ -11,7 +11,9 @@ app.use(express.json());
 app.use(express.static("public"));
 
 //Connect to db
-const url = "mongodb://localhost:27017/todoListDB";
+const url =
+	"mongodb+srv://riazaham:riazaham@udemytodo.bjfnq.mongodb.net/todoListDB";
+
 mongoose.connect(
 	url,
 	{ useNewUrlParser: true, useUnifiedTopology: true },
